@@ -8,44 +8,9 @@ import {
     KeyboardAvoidingView,
     Platform,
 } from 'react-native';
-import { styles } from '../components/styles';
+import styles from '../components/styles';
 import Msg from '../components/msg';
-
-const data = [
-    {
-        question: 'hi',
-        answer: 'Hello',
-    },
-    {
-        question: 'hello',
-        answer: 'Hi',
-    },
-    {
-        question: 'hi bot',
-        answer: 'Hello',
-    },
-    {
-        question: 'hello bot',
-        answer: 'Hi',
-    },
-    {
-        question: 'how are you',
-        answer: 'I am fine',
-    },
-    {
-        question: 'what is your age',
-        answer: 'I was developed yesterday',
-    },
-    {
-        question: 'what is your name',
-        answer: 'I am bot',
-    },
-    {
-        question: 'how to use hand gesture tool?',
-        answer: 'Open the tool , Try to maintain a distance of 1 m from the camera and keep a mark hands are properly visible and make gesture you want',
-    },
-
-];
+import { data } from '../components/data';
 
 let chats = [];
 const ChatBot = () => {

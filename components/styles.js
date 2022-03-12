@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     padding: 15,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: 'black',
   },
   headingWrapper: {
     marginTop: 20,
@@ -13,8 +13,8 @@ export const styles = StyleSheet.create({
   heading: {
     fontFamily: 'HelveticaNeue',
     fontWeight: 'bold',
-    fontSize: 28,
-    color: colors.heading,
+    fontSize: 25,
+    color: 'white',
   },
   subHeading: {
     fontFamily: 'HelveticaNeue',

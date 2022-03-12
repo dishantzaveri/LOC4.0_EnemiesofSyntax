@@ -1,8 +1,10 @@
-import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import React from 'react';
 import PastActivity from '../components/PastActivity';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Dashboard = () => {
+const Dashboard = ({ navigation }) => {
   const pastActivities = [
     {
       id: 1,
@@ -37,15 +39,25 @@ const Dashboard = () => {
         padding: 10,
       }}>
       <ScrollView>
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 30,
-            fontWeight: 'bold',
-            marginBottom: 20,
-          }}>
-          Past Activities
-        </Text>
+
+        < View style={{ flexDirection: 'row' }}>
+
+          <TouchableOpacity onPress={() => { navigation.navigate('Graph'); }}>
+            <Text
+              style={{
+                color: 'white',
+                fontSize: 25,
+                fontWeight: 'bold',
+
+                alignContent: 'center',
+                justifyContent: 'center'
+              }}>
+              Past Activities
+            </Text>
+            <Icon name="card-outline" color='white' size={26} />
+
+          </TouchableOpacity>
+        </ View>
         {pastActivities.map(ac => (
           <PastActivity key={ac.id} data={ac} />
         ))}

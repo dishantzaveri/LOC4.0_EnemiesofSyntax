@@ -17,8 +17,6 @@ export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [tok, setTok] = useState();
-  ;
-  console.log(email);
   const saveData = async () => {
     const STORAGE_KEY1 = '@save_token';
     var formdata = new FormData();
@@ -31,9 +29,15 @@ export default function Login({ navigation }) {
       redirect: 'follow'
     };
 
+
+
     fetch("https://joshiyash05.pythonanywhere.com/account/login/", requestOptions)
       .then(response => response.text())
-      .then(result => console.log(result))
+      .then(result => {
+        setTok(result.token);
+        console.log(result.token);
+        AsyncStorage.setItem(STORAGE_KEY1, result.token);
+      })
       .catch(error => console.log('error', error));
   }
   return (
@@ -101,7 +105,7 @@ const styles = StyleSheet.create({
 
   link: {
     fontWeight: 'bold',
-    color: "#FFFFFF",
+    color: "#3BCBFF",
   },
   buttonContainer: {
     width: '60%',

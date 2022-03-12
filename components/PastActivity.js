@@ -1,7 +1,7 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
 
-const PastActivity = ({data}) => {
+const PastActivity = ({ data }) => {
   const getVideoId = link => {
     return link.split('/')[3];
   };
@@ -27,8 +27,8 @@ const PastActivity = ({data}) => {
           borderRadius: 100,
         }}
       />
-      <View style={{marginLeft: 10}}>
-        <Text style={{fontSize: 20, fontWeight: '700', color: 'black'}}>
+      <View style={{ marginLeft: 10 }}>
+        <Text style={{ fontSize: 20, fontWeight: '700', color: 'black' }}>
           {data.title}
         </Text>
         <Text>{data.time}</Text>
