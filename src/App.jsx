@@ -3,8 +3,11 @@ import { Footer } from './components/Footer'
 import { NavBar } from './components/Navbar'
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'
-import { Profile } from './pages/Profile'
+import { Dashboard } from './pages/Dashboard'
 import { Register } from './pages/Register'
+import { Events } from './pages/Events'
+import { ProfileCreate } from './pages/ProfileCreate'
+import { ProfileEdit } from './pages/ProfileEdit'
 
 const App = () => {
   return (
@@ -15,7 +18,10 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/events' element={<Events />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/profile/create' element={<ProfileCreate />} />
+          <Route path='/profile/edit' element={<ProfileEdit />} />
         </Routes>
         <Footer />
       </Router>

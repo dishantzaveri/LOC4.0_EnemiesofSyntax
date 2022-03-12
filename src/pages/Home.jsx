@@ -28,7 +28,7 @@ const data =[
 
 export const Home = () => {
   return (
-    <div className='grid grid-cols-12 gap-8 px-24 py-12'>
+    <div className='grid grid-cols-12 gap-12 px-32 py-12'>
       <div className='col-span-8'>
         <div className="bg-gray-600 py-6 px-8 h-min rounded-xl shadow-xl">
           <div className="flex justify-between items-center w-full h-min pb-4">
