@@ -90,10 +90,10 @@ export default function Login({ navigation }) {
         mode="contained"
         onPress={() => {
           saveData();
-          navigation.navigate('Info');
+          navigation.navigate('bottomtabs');
         }}
-        style={{ marginTop: 6 , color:"#000000"}}>
-       LOGIN
+        style={{ marginTop: 6, color: "#000000" }}>
+        LOGIN
       </Button>
       <View style={styles.row}>
         <Text style={styles.best}>Don't have an account? </Text>
