@@ -1,18 +1,21 @@
 import React from 'react';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from './Home';
 import Events from './Events';
 import HomeNavigator from './HomeNavigator';
-
+import Dashboard from './Dashboard';
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabs = ({ route }) => {
+const BottomTabs = ({route}) => {
   return (
-    <Tab.Navigator initialRouteName="Home" activeColor="#fff" independent={true}>
+    <Tab.Navigator
+      initialRouteName="Home"
+      activeColor="#fff"
+      independent={true}>
       <Tab.Screen
         name="Home"
         component={HomeNavigator}
@@ -20,9 +23,8 @@ const BottomTabs = ({ route }) => {
           headerShown: false,
           tabBarLabel: 'Home',
           tabBarColor: '#009387',
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Icon name="ios-home" color={color} size={26} />
-
           ),
         }}
       />
@@ -33,11 +35,22 @@ const BottomTabs = ({ route }) => {
           headerShown: false,
           tabBarLabel: 'Events',
           tabBarColor: '#1f65ff',
-          tabBarIcon: ({ color }) => (
-
+          tabBarIcon: ({color}) => (
             <Icon name="ios-home" color={color} size={26} />
           ),
         }}
+      />
+      <Tab.Screen
+        name="Dashboard"
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Events',
+          tabBarColor: '#1f65ff',
+          tabBarIcon: ({color}) => (
+            <Icon name="ios-home" color={color} size={26} />
+          ),
+        }}
+        component={Dashboard}
       />
       {/* <Tab.Screen
         name="Diary"
@@ -67,4 +80,3 @@ const BottomTabs = ({ route }) => {
   );
 };
 export default BottomTabs;
-
