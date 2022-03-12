@@ -6,64 +6,46 @@ import {
     TouchableOpacity,
     FlatList,
     Text,
+    Image,
     ImageBackground
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-
+import axios from "axios"
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 export default function News() {
     const [filteredData, setFilteredData] = useState([]);
     useEffect(() => {
         fetchData();
+
     }, []);
 
+    useEffect(() => {
+        console.log(filteredData)
+    }, [filteredData])
     const fetchData = async () => {
-
-        var axios = require('axios');
-        var FormData = require('form-data');
-        var data = new FormData();
-        data.append('username', 'hidishant');
-        data.append('email', 'hidishant@gmail.com');
-        data.append('password', 'hibro123');
-
-        var config = {
-            method: 'get',
-            url: 'https://newsapi.org/v2/everything?q=tesla&from=2022-02-12&sortBy=publishedAt&apiKey=e122cf46d6564406a135ac8588c191dd',
-            data: data
-        };
-
-        axios(config)
-            .then(function (response) {
-                // console.log(JSON.stringify(response.data));
-                setFilteredData(response.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-
+        const res = await axios.get("https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=e122cf46d6564406a135ac8588c191dd");
+        console.log(res.data);
+        setFilteredData(res.data.articles)
     };
 
     const renderItem = ({ item }) => {
 
         return (
-            <View style={styles.feedItem} elevation={15}>
-                <ImageBackground source={require('../assets/person.png')} style={styles.avatar} />
-                <View style={{ flex: 1 }}>
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                        <View>
-                            <Text style={styles.name}>{item.status}</Text>
 
-                        </View>
-                    </View>
-                    <Text style={styles.post}>{item.status}</Text>
-                    <ImageBackground source={{
-                        uri: item.photo,
-                    }} style={styles.postImage} resizeMode="cover" />
-                    <View style={{ flexDirection: "row" }}>
-                        <Icon name="ios-heart-outline" size={24} color="#73788B" style={{ marginRight: 16 }} />
-                        <Icon name="chatbox" size={24} color="#73788B" />
-                    </View>
+            <Card>
+                <Card.Title title={item.source.name} subtitle={item.author} />
+                <Card.Content>
+                    <Title>{item.title}</Title>
+                    <Paragraph>{item.description}</Paragraph>
+                </Card.Content>
+                <ImageBackground style={{ height: 300, width: 400 }} source={{ uri: item.urlToImage }} />
+                <View style={{ flexDirection: "row" }}>
+                    <Icon name="ios-heart-outline" size={24} color="#73788B" style={{ marginRight: 16 }} />
+                    <Icon name="chatbox" size={24} color="#73788B" />
                 </View>
-            </View>
+
+            </Card>
+
 
         );
     };

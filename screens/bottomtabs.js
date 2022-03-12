@@ -8,6 +8,7 @@ import Events from './Events';
 import HomeNavigator from './HomeNavigator';
 import Dashboard from './dashboard';
 import Profile from './Profile';
+import News from './News';
 
 const Tab = createBottomTabNavigator();
 
@@ -52,6 +53,18 @@ const BottomTabs = ({ route }) => {
           ),
         }}
         component={Dashboard}
+      />
+      <Tab.Screen
+        name="News"
+        component={News}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'News',
+          tabBarColor: '#1f65ff',
+          tabBarIcon: ({ color }) => (
+            <Icon name="card-outline" color={color} size={26} />
+          ),
+        }}
       />
       <Tab.Screen
         name="Profile"
