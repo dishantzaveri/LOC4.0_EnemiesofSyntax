@@ -8,7 +8,7 @@ export const Home = () => {
   const [data, setData] = useState([])
   useEffect(() => {
     axios.get('https://dishant.pythonanywhere.com/links/listallvideos').then(res => {
-      setData(res.data)
+      setData(res.data.slice(0,6))
       console.log(res.data);
     })
   }, [])
