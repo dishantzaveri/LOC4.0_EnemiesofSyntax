@@ -5,10 +5,10 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     padding: 15,
-    backgroundColor:'#000000'
+    backgroundColor:'#FFFFFF'
   },
   headingWrapper: {
-    marginTop: 60,
+    marginTop: 20,
   },
   heading: {
     fontFamily: 'HelveticaNeue',
@@ -54,7 +54,7 @@ export const styles = StyleSheet.create({
   topicImage: {
     alignSelf: 'center',
     height:150,
-    width:100,
+    width:150,
     flex:1,
   },
   card: {
@@ -63,5 +63,10 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     flexDirection: 'column',
     justifyContent: 'space-between',
+    shadowColor: "#000000",
+    shadowOffset: { height: 15 },
+    shadowRadius: 15,
+    shadowOpacity: 10,
+    elevation:5
   },
 });

@@ -35,6 +35,15 @@ const topics = [
 
   return (
     <View style={styles.container}>
+      {/* <Image
+        style={styles.bgImage}
+        source={require('../../../assets/images/bg2.png')}
+      /> */}
+      <View style={styles.headingWrapper}>
+        <Text style={styles.heading}>Hey Dishant</Text>
+        <Text style={styles.subHeading}>Hope,you are doing well:)</Text>
+        <Text style={styles.title}>Choose a sport you want to explore:</Text>
+      </View>
       
       <ScrollView contentContainerStyle={styles.scrollViewWrapper}>
         <View style={styles.row}>
