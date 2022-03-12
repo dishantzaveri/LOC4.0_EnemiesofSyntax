@@ -7,6 +7,7 @@ import Cricket from './Cricket';
 import CategoryScreen from './CategoryScreen';
 import ChatBot from './Chatbot';
 import Graph from './Graph';
+import QRCode from './QRCode';
 const Stack = createNativeStackNavigator();
 
 const HomeNavigator = () => {
@@ -48,7 +49,22 @@ const HomeNavigator = () => {
         component={Graph}
         name="Graph"
       />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+        }}
+        component={QRCode}
+        name="QRCode"
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+        }}
+        component={ScanQRCode}
+        name="ScanQRCode"
+      />
     </Stack.Navigator>
+
 
   );
 };

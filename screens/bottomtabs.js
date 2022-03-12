@@ -9,6 +9,7 @@ import HomeNavigator from './HomeNavigator';
 import Dashboard from './dashboard';
 import Profile from './Profile';
 import News from './News';
+import Drawer from './Drawer';
 
 const Tab = createBottomTabNavigator();
 
@@ -59,7 +60,7 @@ const BottomTabs = ({ route }) => {
         component={News}
         options={{
           headerShown: false,
-          tabBarLabel: 'News',
+          tabBarLabel: 'Events',
           tabBarColor: '#1f65ff',
           tabBarIcon: ({ color }) => (
             <Icon name="card-outline" color={color} size={26} />
@@ -78,6 +79,18 @@ const BottomTabs = ({ route }) => {
         }}
         component={Profile}
       />
+      {/* <Tab.Screen
+        name="Drawer"
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Events',
+          tabBarColor: '#1f65ff',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-person" color={color} size={26} />
+          ),
+        }}
+        component={Drawer}
+      /> */}
     </Tab.Navigator>
   );
 };

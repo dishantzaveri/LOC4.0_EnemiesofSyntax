@@ -7,6 +7,7 @@ import Signup from './screens/Signup';
 import Auth from './screens/auth';
 import BottomTabs from './screens/bottomtabs';
 import Profile from './screens/Profile';
+import Drawer from './screens/Drawer';
 
 const Stack = createStackNavigator();
 function App() {
@@ -36,6 +37,7 @@ function App() {
                     name="bottomtabs"
                     component={BottomTabs}
                     options={{ headerShown: false }}></Stack.Screen>
+
 
             </Stack.Navigator>
 
