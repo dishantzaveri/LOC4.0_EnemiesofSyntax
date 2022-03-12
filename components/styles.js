@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     padding: 15,
-    backgroundColor:'#FFFFFF'
+    backgroundColor: '#FFFFFF',
   },
   headingWrapper: {
     marginTop: 20,
@@ -53,9 +53,9 @@ export const styles = StyleSheet.create({
   },
   topicImage: {
     alignSelf: 'center',
-    height:150,
-    width:150,
-    flex:1,
+    height: 145,
+    width: 145,
+    flex: 1,
   },
   card: {
     padding: 10,
@@ -63,10 +63,12 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     flexDirection: 'column',
     justifyContent: 'space-between',
-    shadowColor: "#000000",
-    shadowOffset: { height: 15 },
+    shadowColor: '#000000',
+    shadowOffset: {height: 15},
     shadowRadius: 15,
     shadowOpacity: 10,
-    elevation:5
+    elevation: 5,
+    backgroundColor: 'white',
+    marginHorizontal: 1,
   },
 });
