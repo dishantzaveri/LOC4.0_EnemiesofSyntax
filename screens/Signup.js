@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Image,TouchableOpacity , Alert} from 'react-native';
+import { View, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native';
 import { Text, useTheme } from 'react-native-paper';
 import { width } from '../components/Constants';
 import Background from '../components/Background';
@@ -9,76 +9,80 @@ import TextInput from '../components/TextInput';
 export default function Signup({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
   const { colors } = useTheme();
   const saveData = async () => {
-   
+
     console.log(email);
-    
-    var myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
-    myHeaders.append(
-      'Cookie',
-      'csrftoken=38nEC8N6KwnhV9tDih1n18PQdK0hhMvWBLSpsUcjpwCA4h82dChCSpUZ4rEseLqH; sessionid=1cbd4sze5lwmf948fagzpu2u53n5hi2m',
-    );
 
-    var raw = JSON.stringify({
-      email: email,
-      password: password,
-    });
+    var axios = require('axios');
 
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow',
+    var config = {
+      method: 'get',
+      url: 'https://joshiyash05.pythonanywhere.com/account/register/',
+      headers: {
+        'Authorization': 'Token 60a6b5ea81823c883d178b7b2ad57b618d712707'
+      }
     };
 
-    await fetch('https://findmyplug.herokuapp.com/register/', requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
   };
 
   return (
     <Background>
-    <TextInput
-      label="Email"
-      returnKeyType="next"
-      value={email}
-      onChangeText={text => setEmail(text)}
-      error={!!email.error}
-      errorText={email.error}
-      autoCapitalize="none"
-      autoCompleteType="email"
-      textContentType="emailAddress"
-      keyboardType="email-address"
-    />
-    <TextInput
-      label="Password"
-      returnKeyType="done"
-      value={password}
-      onChangeText={text => setPassword(text)}
-      error={!!password.error}
-      errorText={password.error}
-      secureTextEntry={true}
-      autoCapitalize="none"
-      autoCompleteType="password"
-      keyboardType="default"
-    />
-    <Button
-      mode="contained"
-    onPress={()=>{saveData();navigation.navigate('Login');}}
-      style={{ marginTop: 6 }}>
-    SIGNUP
-    </Button>
-    <View style={styles.row}>
-      <Text style={styles.best}>Already have an account? </Text>
-      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-        <Text style={styles.link}>  Log in</Text>
-      </TouchableOpacity>
-    </View>
-  </Background>
- 
+      <TextInput
+        label="Username"
+        returnKeyType="next"
+        value={username}
+        onChangeText={text => setUsername(text)}
+
+        autoCapitalize="none"
+        autoCompleteType="username"
+        textContentType="emailAddress"
+        keyboardType="email-address"
+      />
+      <TextInput
+        label="Email"
+        returnKeyType="next"
+        value={email}
+        onChangeText={text => setEmail(text)}
+
+        autoCapitalize="none"
+        autoCompleteType="email"
+        textContentType="emailAddress"
+        keyboardType="email-address"
+      />
+      <TextInput
+        label="Password"
+        returnKeyType="done"
+        value={password}
+        onChangeText={text => setPassword(text)}
+        secureTextEntry={true}
+        autoCapitalize="none"
+        autoCompleteType="password"
+        keyboardType="default"
+      />
+      <Button
+        mode="contained"
+        onPress={() => { saveData(); navigation.navigate('Login'); }}
+        style={{ marginTop: 6 }}>
+        SIGNUP
+      </Button>
+      <View style={styles.row}>
+        <Text style={styles.best}>Already have an account? </Text>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.link}>  Log in</Text>
+        </TouchableOpacity>
+      </View>
+    </Background>
+
   );
 };
 

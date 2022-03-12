@@ -5,6 +5,7 @@ import Home from './Home';
 import { NavigationContainer } from '@react-navigation/native';
 import Cricket from './Cricket';
 import CategoryScreen from './CategoryScreen';
+import ChatBot from './Chatbot';
 const Stack = createNativeStackNavigator();
 
 const HomeNavigator = () => {
@@ -31,6 +32,13 @@ const HomeNavigator = () => {
         }}
         component={CategoryScreen}
         name="CategoryScreen"
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+        }}
+        component={ChatBot}
+        name="Chatbot"
       />
     </Stack.Navigator>
 

@@ -12,10 +12,10 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 
-export default function Events() {
-    const [search, setSearch] = useState('');
-    const [filteredData, setFilteredData] = useState([]);
-    const [masterData, setMasterData] = useState([]);
+export default function Events({ navigation }) {
+  const [search, setSearch] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
+  const [masterData, setMasterData] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -28,7 +28,7 @@ export default function Events() {
     var config = {
       method: 'get',
       url: 'http://dishant.pythonanywhere.com/links/listevents',
-      headers: { 
+      headers: {
         'Cookie': 'csrftoken=1vysuJDGtT2croq0GWTtKJBQOJXrS7Z8oCDvlbuOzIdEnnHV6FxVXkvT934h8row'
       }
 
@@ -55,35 +55,35 @@ export default function Events() {
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
       });
-      
+
       setFilteredData(newData);
       setSearch(text);
     }
     if (text) {
-        const newData = masterData.filter((item) => {
-          const itemData = item.title
-            ? item.title.toUpperCase()
-            : ''.toUpperCase();
-          const textData = text.toUpperCase();
-          return itemData.indexOf(textData) > -1;
-        });
-        
-        setFilteredData(newData);
-        setSearch(text);
-      } 
+      const newData = masterData.filter((item) => {
+        const itemData = item.title
+          ? item.title.toUpperCase()
+          : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+
+      setFilteredData(newData);
+      setSearch(text);
+    }
     if (text) {
-        const newData = masterData.filter((item) => {
-          const itemData = item.location
-            ? item.location.toUpperCase()
-            : ''.toUpperCase();
-          const textData = text.toUpperCase();
-          return itemData.indexOf(textData) > -1;
-        });
-        
-        setFilteredData(newData);
-        setSearch(text);
-      } 
-    
+      const newData = masterData.filter((item) => {
+        const itemData = item.location
+          ? item.location.toUpperCase()
+          : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+
+      setFilteredData(newData);
+      setSearch(text);
+    }
+
     else {
       setFilteredData(masterData);
       setSearch(text);
@@ -98,7 +98,7 @@ export default function Events() {
           <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
             <View>
               <Text style={styles.name}>{item.sports}</Text>
-    
+
             </View>
           </View>
           <Text style={styles.post}>{item.title}</Text>
@@ -108,7 +108,10 @@ export default function Events() {
           }} style={styles.postImage} resizeMode="cover" />
           <View style={{ flexDirection: "row" }}>
             <Icon name="ios-heart-outline" size={24} color="#73788B" style={{ marginRight: 16 }} />
-            <Icon name="chatbox" size={24} color="#73788B" />
+            <Icon name="chatbox" onPress={() => {
+
+              navigation.navigate('Chatbot');
+            }} size={24} color="#73788B" />
           </View>
         </View>
       </View>
@@ -118,7 +121,7 @@ export default function Events() {
 
   return (
     <View style={styles.container}>
-          <View>
+      <View>
         <View style={styles.inputCard} >
           <TextInput
             style={styles.input}
@@ -129,8 +132,7 @@ export default function Events() {
             onChangeText={(text) => searchFilter(text)}
           />
           <TouchableOpacity
-            onPress={() => {
-            }}>
+          >
             <FontAwesome5
               name={"search" ? 'search' : 'refresh'}
               size={20}
@@ -138,7 +140,7 @@ export default function Events() {
             />
           </TouchableOpacity>
         </View>
-        </View>
+      </View>
 
       <FlatList
         data={filteredData}
@@ -157,18 +159,18 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor:'black',
-  
+    backgroundColor: 'black',
+
   },
   header: {
     paddingTop: 64,
     paddingBottom: 16,
-     backgroundColor:'#3BCBFF',
+    backgroundColor: '#3BCBFF',
     alignItems: "center",
     justifyContent: "center",
     borderBottomWidth: 1,
     borderBottomColor: "#EBECF4",
- 
+
   },
   headerTitle: {
     fontSize: 20,
@@ -182,7 +184,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 8,
     flexDirection: "row",
-    margin:15,
+    margin: 15,
     shadowColor: "#000000",
     shadowOffset: { height: 15 },
     shadowRadius: 15,

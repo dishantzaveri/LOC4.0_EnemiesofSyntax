@@ -11,9 +11,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Text, useTheme } from 'react-native-paper';
 
 export default function Login({ navigation }) {
-  // useEffect(() => {
-  //   saveData();
-  // }, []);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [tok, setTok] = useState();
@@ -21,43 +18,24 @@ export default function Login({ navigation }) {
 
   console.log(email);
   const saveData = async () => {
-    const STORAGE_KEY1 = '@save_token';
-    var myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
-    myHeaders.append(
-      'Cookie',
-      'csrftoken=aBugKE4huNVscf0CJpQYYGWYM4Zd34afYp5yIH8hSkzPLrDTiK5gmbFMxokSXQZW; sessionid=uw9jqj1994dn44tl7i2olnkpga6frsw6',
-    );
+    var axios = require('axios');
 
-    var raw = JSON.stringify({
-      email: email,
-      password: password,
-    });
-
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow',
+    var config = {
+      method: 'get',
+      url: 'https://joshiyash05.pythonanywhere.com/account/login/',
+      headers: {
+        'Authorization': 'Token 60a6b5ea81823c883d178b7b2ad57b618d712707'
+      }
     };
 
-    await fetch('https://findmyplug.herokuapp.com/login/', requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        setTok(result.token);
-        console.log(result.token);
-        AsyncStorage.setItem(STORAGE_KEY1, result.token);
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
       })
-      .catch(error => console.log('error', error));
-    // try {
-    //   //await AsyncStorage.clear();
-    //    AsyncStorage.setItem(STORAGE_KEY1, token);
-    //   console.log(STORAGE_KEY1);
-    // } catch (e) {
-    //   //console.log(token);
-    //   Alert.alert('Failed to save the data to the storage');
-    // }
-  };
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
   return (
 
 
@@ -117,7 +95,8 @@ const styles = StyleSheet.create({
   },
   best: {
 
-    color: '#FFFFFF'
+    color: '#3BCBFF',
+    fontWeight: 'bold',
   },
 
   link: {
