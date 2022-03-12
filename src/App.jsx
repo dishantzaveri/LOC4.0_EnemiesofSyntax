@@ -8,6 +8,7 @@ import { Register } from './pages/Register'
 import { Events } from './pages/Events'
 import { ProfileCreate } from './pages/ProfileCreate'
 import { ProfileEdit } from './pages/ProfileEdit'
+import Videos from './pages/Videos'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/profile/create' element={<ProfileCreate />} />
           <Route path='/profile/edit' element={<ProfileEdit />} />
+          <Route path='/videos' element={<Videos />} />
         </Routes>
         <Footer />
       </Router>
