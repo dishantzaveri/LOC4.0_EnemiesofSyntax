@@ -15,23 +15,21 @@ export default function Signup({ navigation }) {
 
     console.log(email);
 
-    var axios = require('axios');
+    var formdata = new FormData();
+    formdata.append("username", username);
+    formdata.append("email", email);
+    formdata.append("password", password);
 
-    var config = {
-      method: 'get',
-      url: 'https://joshiyash05.pythonanywhere.com/account/register/',
-      headers: {
-        'Authorization': 'Token 60a6b5ea81823c883d178b7b2ad57b618d712707'
-      }
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
     };
 
-    axios(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    fetch("https://joshiyash05.pythonanywhere.com/account/register/", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
 
   };
 

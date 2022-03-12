@@ -9,4 +9,4 @@ import Events from './screens/Events';
 import Home from './screens/Home';
 import Profile from './screens/Profile';
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => Profile);
