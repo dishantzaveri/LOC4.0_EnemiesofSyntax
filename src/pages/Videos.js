@@ -18,11 +18,12 @@ export default function Videos() {
     if(videoId) {
       axios.get(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`)
         .then(res => setVideoData(res.data))
+      window.scrollTo({top: 0, left: 0,behavior: 'smooth'})
     }
   }, [videoId])
 
   return (
-    <div>
+    <div className='scroll-smooth'>
       <div className="pb-10 pt-5 bg-gray-900 flex flex-1 items-center justify-center mt-3">
         {videoData ? (
           <div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
@@ -31,6 +31,10 @@ export const data = {
   ],
 };
 
-export default function ChartComponent() {
-  return <Pie data={data} />;
+export const Analysis = () => {
+  return (
+    <div className="h-80 w-80">
+      <Pie data={data} />
+    </div>
+  )
 }
