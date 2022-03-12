@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from './Home';
@@ -9,10 +9,9 @@ import HomeNavigator from './HomeNavigator';
 import Dashboard from './Dashboard';
 import Profile from './Profile';
 
-
 const Tab = createBottomTabNavigator();
 
-const BottomTabs = ({ route }) => {
+const BottomTabs = ({route}) => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -25,7 +24,7 @@ const BottomTabs = ({ route }) => {
           headerShown: false,
           tabBarLabel: 'Home',
           tabBarColor: '#009387',
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Icon name="ios-home" color={color} size={26} />
           ),
         }}
@@ -37,7 +36,7 @@ const BottomTabs = ({ route }) => {
           headerShown: false,
           tabBarLabel: 'Events',
           tabBarColor: '#1f65ff',
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Icon name="ios-home" color={color} size={26} />
           ),
         }}
@@ -48,7 +47,7 @@ const BottomTabs = ({ route }) => {
           headerShown: false,
           tabBarLabel: 'Events',
           tabBarColor: '#1f65ff',
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Icon name="ios-home" color={color} size={26} />
           ),
         }}
@@ -56,15 +55,15 @@ const BottomTabs = ({ route }) => {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
         options={{
           headerShown: false,
-          tabBarLabel: 'Profile',
-          tabBarColor: '#d02860',
-          tabBarIcon: ({ color }) => (
-            <Icon name="ios-people" color={color} size={26} />
+          tabBarLabel: 'Events',
+          tabBarColor: '#1f65ff',
+          tabBarIcon: ({color}) => (
+            <Icon name="ios-person" color={color} size={26} />
           ),
         }}
+        component={Profile}
       />
     </Tab.Navigator>
   );

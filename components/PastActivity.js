@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 
-const PastActivity = ({ac}) => {
+const PastActivity = ({data}) => {
   const getVideoId = link => {
     return link.split('/')[3];
   };
@@ -18,7 +18,7 @@ const PastActivity = ({ac}) => {
       <Image
         source={{
           uri: `https://i.ytimg.com/vi/${getVideoId(
-            ac.videoLink,
+            data.videoLink,
           )}/hqdefault.jpg`,
         }}
         style={{
@@ -29,9 +29,9 @@ const PastActivity = ({ac}) => {
       />
       <View style={{marginLeft: 10}}>
         <Text style={{fontSize: 20, fontWeight: '700', color: 'black'}}>
-          {ac.title}
+          {data.title}
         </Text>
-        <Text>{ac.time}</Text>
+        <Text>{data.time}</Text>
       </View>
     </View>
   );

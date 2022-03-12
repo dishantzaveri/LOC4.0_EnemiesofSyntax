@@ -24,6 +24,7 @@ const Category = ({image, title, navigation}) => {
             fontSize: 18,
             fontWeight: 'bold',
             marginTop: 10,
+            color: 'black',
           }}>
           {title}
         </Text>

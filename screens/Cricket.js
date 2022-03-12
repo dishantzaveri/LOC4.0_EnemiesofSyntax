@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   StyleSheet,
   Text,
@@ -11,11 +11,33 @@ import Video from '../components/Video';
 import {cricketData} from '../components/data';
 import Category from '../components/Category';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
 const Cricket = ({navigation}) => {
+  const [topCricketData, setCricketData] = useState([]);
+  const getData = () => {
+    var axios = require('axios');
+    var config = {
+      method: 'get',
+      url: 'https://dishant.pythonanywhere.com/links/listallvideos',
+      headers: {},
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        setCricketData(response.data.slice(0, 4));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
   const [videoId, setVideoId] = useState('');
   const [com, setCom] = useState(false);
   const [title, setTitle] = useState('');
-  const data = cricketData.slice(0, 4);
   const categoryData = [
     {
       id: 1,
@@ -73,11 +95,11 @@ const Cricket = ({navigation}) => {
           showsHorizontalScrollIndicator={false}
           horizontal
           style={styles.courseContainer}>
-          {data.map(ele => (
+          {topCricketData.map(ele => (
             <View style={styles.course} key={ele.id}>
               <TouchableOpacity
                 onPress={() => {
-                  setVideoId(ele.videoLink.split('/')[3]);
+                  setVideoId(ele.link.split('/')[3]);
                   setCom(ele.completed);
                   setTitle(ele.title);
                 }}>
@@ -89,7 +111,7 @@ const Cricket = ({navigation}) => {
                   <Image
                     source={{
                       uri: `https://i.ytimg.com/vi/${
-                        ele.videoLink.split('/')[3]
+                        ele.link.split('/')[3]
                       }/hqdefault.jpg`,
                     }}
                     style={{

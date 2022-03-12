@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React from 'react';
-import PastActivity from '../components/pastActivity';
+import PastActivity from '../components/PastActivity';
 
 const Dashboard = () => {
   const pastActivities = [
