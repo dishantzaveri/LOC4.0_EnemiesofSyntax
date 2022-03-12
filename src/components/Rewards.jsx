@@ -57,7 +57,7 @@ export const Rewards = () => {
 ]
   return (
     <div>
-      <h1>Rewards</h1>
+      <h1 className='text-4xl mb-10' >Rewards</h1>
       <div className='flex overflow-auto scroll-smooth no-scrollbar flex-1 flex-nowrap'>
         {
           data.map(ele => (

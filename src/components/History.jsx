@@ -1,7 +1,10 @@
 import React from 'react'
+import ChartComponent from './ChartComponent'
 
 export const History = () => {
   return (
-    <div>History</div>
+    <div>      
+      <ChartComponent />
+    </div>
   )
 }
