@@ -11,8 +11,8 @@ export const Dashboard = () => {
         <Profile />
         <Analysis />
       </div>
-      <History />   
       <Rewards />
+      <History />   
     </div>
   )
 }

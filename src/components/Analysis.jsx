@@ -33,7 +33,8 @@ export const data = {
 
 export const Analysis = () => {
   return (
-    <div className="h-80 w-80">
+    <div className="w-[500px] flex flex-col items-center">
+      <h1 className='text-4xl font-semibold mb-4'>Monthly Activity</h1>
       <Pie data={data} />
     </div>
   )

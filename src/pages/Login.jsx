@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from 'axios';
+import { GlobalContext } from '../context/GlobalContext'
 
 export const Login = () => {
+  const navigate = useNavigate()
+  const { setToken, setUsername } = useContext(GlobalContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -13,12 +17,16 @@ export const Login = () => {
     data.append('password', password)
     const config = {
       method: 'post',
-      url: 'https://joshiyash05.pythonanywhere.com/account/login/',
+      url: 'https://dishant.pythonanywhere.com/links/login/',
       data: data,
     }
     axios(config)
       .then(res => {
-        console.log(res);
+        console.log(res.data);
+        setToken(res.data.token)
+        setUsername(res.data.username)
+        localStorage.setItem('token', res.data.token)
+        navigate('/')
       })
   }
   return (
