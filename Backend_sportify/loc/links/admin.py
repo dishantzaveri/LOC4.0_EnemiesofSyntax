@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import cricket, football,yoga,fitness,events,allvideos,profile,timestamp
+from .models import cricket, football,yoga,fitness,events,allvideos,profile,timestamp,User
 # Register your models here.
+
+admin.site.register(User)
 admin.site.register(cricket)
 admin.site.register(football)
 admin.site.register(yoga)
