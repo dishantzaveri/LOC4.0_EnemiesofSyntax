@@ -1,38 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import { Event } from './Event'
-
-const data = [
-  {
-    Title: 'Cricket',
-    Desc: 'wbanabab'
-  },
-  {
-    Title: 'Cricket',
-    Desc: 'wbanabab'
-  },
-  {
-    Title: 'Cricket',
-    Desc: 'wbanabab'
-  },
-  {
-    Title: 'Cricket',
-    Desc: 'wbanabab'
-  },
-  {
-    Title: 'Cricket',
-    Desc: 'wbanabab'
-  },
-  {
-    Title: 'Cricket',
-    Desc: 'wbanabab'
-  },
-  {
-    Title: 'Cricket',
-    Desc: 'wbanabab'
-  },
-]
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 export const EventMini = () => {
+  const [data, setData] = useState([])
+  useEffect(() => {
+    axios.get('https://dishant.pythonanywhere.com/links/listevents').then(res => setData(res.data))
+  }, [])
+  console.log(data);
   return (
     <div className='bg-gray-600 h-[500px] w-full px-6 pb-4 rounded-xl shadow-xl flex flex-col overflow-auto scroll-smooth no-scrollbar'>
       <div className="flex justify-between items-center w-full h-min sticky top-0 bg-gray-600 py-4">
@@ -43,8 +19,15 @@ export const EventMini = () => {
         </Link>
       </div>
       <div className='flex flex-col gap-4'>
-        {data.map(sport => (<Event data={sport} />))}
+        {data.map(sport => (
+          <div className="" key={sport.id}>
+            <Link to={`/events/${sport.id}`}>
+              <Event data={sport} />
+            </Link>
+          </div>
+        ))}
       </div>
+      <Outlet />
     </div>
   )
 }

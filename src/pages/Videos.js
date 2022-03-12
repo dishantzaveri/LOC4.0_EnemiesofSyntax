@@ -1,30 +1,43 @@
-import React, { useState } from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import { IconButton, Badge, Stack, Avatar } from "@mui/material";
+import { useEffect, useState } from "react";
 import { allData } from "../components/data";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 export default function Videos() {
+  const params = useParams()
   const cricketData = allData.filter((ele) => ele.sport === "cricket");
-  const [videoId, setVideoId] = useState(
-    cricketData[0].videoLink.split("/")[3]
-  );
+  const [videoId, setVideoId] = useState(params.videoId);
+  const [videoData, setVideoData] = useState({});
 
   const displayVideo = (ele) => {
     setVideoId(ele.videoLink.split("/")[3]);
   };
+
+  console.log(videoData);
+
+  useEffect(() => {
+    if(videoId) {
+      axios.get(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`)
+        .then(res => setVideoData(res.data))
+    }
+  }, [videoId])
+
   return (
     <div>
-      <div>
-        <div className="pb-10 pt-5 z-50 bg-gray-900 sticky top-0 flex flex-1 items-center justify-center mt-3">
-          {videoId ? (
+      <div className="pb-10 pt-5 bg-gray-900 flex flex-1 items-center justify-center mt-3">
+        {videoData ? (
+          <div>
             <iframe
-              width="853"
-              height="380"
+              width="900"
+              height="500"
               src={`https://www.youtube.com/embed/${videoId}`}
               allowFullScreen
             />
-          ) : null}
-        </div>
-        <div className="bg-scroll">
+            <h1 className='text-2xl mt-4'>{videoData.title}</h1>
+          </div>
+        ) : null}
+      </div>
+      <div className="bg-scroll">
+        <div>
           <h3 className="ml-5 mb-5 text-3xl font-bold">Cricket</h3>
           <div className="flex flex-row overflow-auto scroll-smooth no-scrollbar flex-1 flex-nowrap">
             {cricketData.map((ele) => (
@@ -41,7 +54,9 @@ export default function Videos() {
               </div>
             ))}
           </div>
-          <h3 className="ml-5 mt-10 mb-5 text-3xl font-bold">Cricket</h3>
+        </div>
+        <div>
+          <h3 className="ml-5 mb-5 text-3xl font-bold">Cricket</h3>
           <div className="flex flex-row overflow-auto scroll-smooth no-scrollbar flex-1 flex-nowrap">
             {cricketData.map((ele) => (
               <div
