@@ -1,30 +1,27 @@
-import React from 'react'
-import { SimpleMap } from '../components/SimpleMap'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { EventCard } from '../components/EventCard'
 
 export const Events = () => {
-  const data = [1,2,3,4,5,6]
+  const [data, setData] = useState([])
+  useEffect(() => {
+    axios.get('https://dishant.pythonanywhere.com/links/listevents').then(res => setData(res.data))
+  }, [])
   return (
-    <div className='flex flex-row' >
-      <h1>Events</h1>
-      <div className='flex flex-row w-[1000px] flex-wrap'>      
-        {
-        data.map(() => (
-          <div className='m-5 pb-5 bg-gray-700 rounded-lg'>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLYutGxgHSh2xZJQ9wD5bu-G4tlSE-HpCJ1Q&usqp=CAU" className='w-[200px] h-[200px]' />
-            <div className='pl-5 pt-3'>
-              <h1>Football Event</h1>
-              <h1>Location : Andheri</h1>
-              <h1>Timings : 4pm</h1>
-              <h1>Phone:12312321</h1>
-              <h2>Description : fsdf</h2>
-            </div>
-          </div>
-        ))
-      }
+    <div className='flex flex-col px-32 py-12' >
+      <div className="flex justify-between items-center">
+        <h1 className="text-5xl font-semibold mb-8">Events</h1>
+        <Link to='/createevent'>
+          <button className='px-8 py-3 bg-green-400 shadow-xl hover:shadow-2xl rounded-xl text-gray-800'>Host Event</button>
+        </Link> 
       </div>
-      <div className='mr-10 mt-5'>
-      <SimpleMap />
-
+      <div className='flex flex-row gap-24'> 
+        {
+        data.map((data) => (
+          <EventCard data={data} />
+        ))
+        }
       </div>
     </div>
   )
