@@ -3,8 +3,9 @@ import React from 'react';
 import { height } from '../components/Constants';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Button from '../components/Button';
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
     return (
         <View style={{ backgroundColor: '#1B1A17', flex: 1 }}>
             <View
@@ -78,10 +79,17 @@ const Profile = () => {
                     </View>
                 </View>
                 <Text style={styles.infoText}>Age : 18</Text>
-                <Text style={styles.infoText}>Interest : Cricket</Text>
+
                 <Text style={styles.infoText}>Weight : 56Kg</Text>
                 <Text style={styles.infoText}>Height : 184cm</Text>
                 <Text style={styles.infoText}>Phone No. 7021579939</Text>
+                <Button
+                    mode="contained"
+                    onPress={() => navigation.navigate('Login')}
+                    style={{ marginTop: 6, color: "#000000" }}>
+                    LOGOUT
+                </Button>
+
             </View>
         </View>
     );

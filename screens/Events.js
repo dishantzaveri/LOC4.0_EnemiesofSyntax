@@ -96,23 +96,23 @@ export default function Events({ navigation }) {
         <ImageBackground source={require('../assets/person.png')} style={styles.avatar} />
         <View style={{ flex: 1 }}>
           <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-            <View>
-              <Text style={styles.name}>{item.sports}</Text>
+            <View style={{ flexDirection: "row" }}>
+
+              <Text style={styles.name}>SPORT - {item.sports}</Text>
+              <Icon name="qr-code-outline" onPress={() => {
+
+                navigation.navigate('QRCode');
+              }} size={24} color="#73788B" style={{ marginLeft: 100 }} />
 
             </View>
           </View>
-          <Text style={styles.post}>{item.title}</Text>
-          <Text style={styles.post}>{item.location}</Text>
+          <Text style={styles.post}>NAME - {item.title}</Text>
+          <Text style={styles.post}>LOCATION - {item.location}</Text>
           <ImageBackground source={{
             uri: item.photo,
           }} style={styles.postImage} resizeMode="cover" />
-          <View style={{ flexDirection: "row" }}>
-            <Icon name="ios-heart-outline" size={24} color="#73788B" style={{ marginRight: 16 }} />
-            <Icon name="chatbox" onPress={() => {
 
-              navigation.navigate('Chatbot');
-            }} size={24} color="#73788B" />
-          </View>
+
         </View>
       </View>
 

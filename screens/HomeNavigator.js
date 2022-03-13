@@ -1,8 +1,8 @@
-import {StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './Home';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import Cricket from './Cricket';
 import CategoryScreen from './CategoryScreen';
 import ChatBot from './Chatbot';
@@ -80,13 +80,13 @@ const HomeNavigator = () => {
         component={QRCode}
         name="QRCode"
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         options={{
           headerShown: false,
         }}
         component={ScanQRCode}
         name="ScanQRCode"
-      /> */}
+      />
     </Stack.Navigator>
   );
 };

@@ -77,6 +77,12 @@ export default function Login({ navigation }) {
         style={{ marginTop: 6, color: "#000000" }}>
         LOGIN
       </Button>
+      <Button
+        mode="contained"
+        onPress={() => navigation.navigate('auth')}
+        style={{ marginTop: 6, color: "#000000" }}>
+        FINGERPRINT
+      </Button>
       <View style={styles.row}>
         <Text style={styles.best}>Don't have an account? </Text>
         <TouchableOpacity onPress={() => navigation.navigate('Signup')}>

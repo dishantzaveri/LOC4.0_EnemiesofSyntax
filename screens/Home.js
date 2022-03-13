@@ -39,10 +39,7 @@ const Home = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      {/* <Image
-        style={styles.bgImage}
-        source={require('../../../assets/images/bg2.png')}
-      /> */}
+
       <View style={styles.headingWrapper}>
         <Text style={styles.heading}>Hey Dishant</Text>
         <Text style={styles.subHeading}>Hope,you are doing well:)</Text>

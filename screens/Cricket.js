@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -11,8 +11,8 @@ import Video from '../components/Video';
 import Category from '../components/Category';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Cricket = ({navigation}) => {
-  const [topCricketData, setTopCricketData] = useState([]);
+const Cricket = ({ navigation }) => {
+  const [topCricketData, setCricketData] = useState([]);
   const getData = () => {
     var axios = require('axios');
     var config = {
@@ -24,7 +24,7 @@ const Cricket = ({navigation}) => {
     axios(config)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
-        setTopCricketData(response.data);
+        setCricketData(response.data.slice(0, 4));
       })
       .catch(function (error) {
         console.log(error);
@@ -55,7 +55,7 @@ const Cricket = ({navigation}) => {
     },
   ];
   return (
-    <View style={{backgroundColor: 'black', flex: 1}}>
+    <View style={{ backgroundColor: 'black', flex: 1 }}>
       <View
         style={{
           flexDirection: 'row',
@@ -109,9 +109,8 @@ const Cricket = ({navigation}) => {
                   }}>
                   <Image
                     source={{
-                      uri: `https://i.ytimg.com/vi/${
-                        ele.link.split('/')[3]
-                      }/hqdefault.jpg`,
+                      uri: `https://i.ytimg.com/vi/${ele.link.split('/')[3]
+                        }/hqdefault.jpg`,
                     }}
                     style={{
                       alignSelf: 'center',

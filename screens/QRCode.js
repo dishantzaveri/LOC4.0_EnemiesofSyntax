@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import {
   SafeAreaView,
   Text,
@@ -11,7 +11,7 @@ import {
 
 import QRCode from 'react-native-qrcode-svg';
 
-const QRCodes = ({navigation}) => {
+const QRCodes = ({ navigation }) => {
   const [inputText, setInputText] = useState('');
   const [qrvalue, setQrvalue] = useState('');
   let myQRCode = useRef();
@@ -29,7 +29,7 @@ const QRCodes = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <QRCode
           getRef={ref => (myQRCode = ref)}
@@ -60,13 +60,13 @@ const QRCodes = ({navigation}) => {
         <TouchableOpacity style={styles.buttonStyle} onPress={shareQRCode}>
           <Text style={styles.buttonTextStyle}>Share QR Code</Text>
         </TouchableOpacity>
-        {/* <TouchableOpacity
-                    style={styles.buttonStyle}
-                    onPress={() => navigation.navigate('ScanQRCode')}>
-                    <Text style={styles.buttonTextStyle}>
-                        Scan to Join a team
-                    </Text>
-                </TouchableOpacity> */}
+        <TouchableOpacity
+          style={styles.buttonStyle}
+          onPress={() => navigation.navigate('ScanQRCode')}>
+          <Text style={styles.buttonTextStyle}>
+            Scan to Join a team
+          </Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -92,11 +92,11 @@ const styles = StyleSheet.create({
   },
   textInputStyle: {
     flexDirection: 'row',
-    height: 30,
-    marginTop: 20,
+
+    marginTop: 10,
     marginLeft: 35,
     marginRight: 35,
-    margin: 10,
+    margin: 30,
   },
   buttonStyle: {
     backgroundColor: '#51D8C7',

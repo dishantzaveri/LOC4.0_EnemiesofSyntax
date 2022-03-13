@@ -32,19 +32,19 @@ export default function News() {
 
         return (
 
-            <Card>
-                <Card.Title title={item.source.name} subtitle={item.author} />
-                <Card.Content>
-                    <Title>{item.title}</Title>
-                    <Paragraph>{item.description}</Paragraph>
-                </Card.Content>
-                <ImageBackground style={{ height: 300, width: 400 }} source={{ uri: item.urlToImage }} />
-                <View style={{ flexDirection: "row" }}>
-                    <Icon name="ios-heart-outline" size={24} color="#73788B" style={{ marginRight: 16 }} />
-                    <Icon name="chatbox" size={24} color="#73788B" />
-                </View>
+            <View >
+                <Card style={{ alignContent: 'center', alignItems: 'center', justifyContent: 'center' }}>
+                    <Card.Title title={item.source.name} subtitle={item.author} />
 
-            </Card>
+                    <Card.Content>
+                        <Title>{item.title}</Title>
+                        <Paragraph>{item.description}</Paragraph>
+                    </Card.Content>
+                    <ImageBackground style={{ height: 300, width: 400 }} source={{ uri: item.urlToImage }} />
+
+
+                </Card>
+            </View>
 
 
         );
@@ -70,17 +70,17 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#3BCBFF',
+        backgroundColor: 'black',
 
     },
     header: {
         paddingTop: 64,
         paddingBottom: 16,
-        backgroundColor: '#3BCBFF',
+        backgroundColor: 'black',
         alignItems: "center",
         justifyContent: "center",
         borderBottomWidth: 1,
-        borderBottomColor: "#EBECF4",
+        borderBottomColor: "black",
 
     },
     headerTitle: {

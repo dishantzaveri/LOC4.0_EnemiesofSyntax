@@ -8,7 +8,7 @@ export default function Splash({ navigation }) {
       <LottieView
         source={require('../assets/animation.json')}
         autoPlay={true}
-        loop
+        loop={false}
 
         style={styles.animation}
       />
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   image: {
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 40,
+    margin: 50,
     height: 150,
     width: 300
 
