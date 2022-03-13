@@ -21,9 +21,9 @@ export const NavBar = () => {
       </div>
       {token ? (
         <div className="flex items-center gap-16">
-          <Link to='/videos' className='font-bold text-xl'>Videos</Link>
+          <Link to='/videos/gusv3BsHd3g' className='font-bold text-xl'>Videos</Link>
           <Link to='/events' className='font-bold text-xl'>Events</Link>
-          <Link to='/ml' className='font-bold text-xl'>ML</Link>
+          <Link to='/ml' className='font-bold text-xl'>Pose Detection</Link>
           <Link to='/dashboard' className='font-bold text-xl'>Dashboard</Link>
           <Link to='/' className='font-bold text-xl text-red-600' onClick={() => Logout()}>Logout</Link>
         </div>

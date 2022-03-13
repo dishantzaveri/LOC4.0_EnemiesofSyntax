@@ -16,7 +16,7 @@ export const SimpleMap = () => {
           longitude: 72.87,
           zoom: 12,
         }}
-        style={{ width: 666, height: 400 }}
+        style={{ width: 666, height: 650 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={MAPBOX_TOKEN}
       >

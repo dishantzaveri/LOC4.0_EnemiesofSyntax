@@ -20,8 +20,7 @@ export const Profile = () => {
     axios(config).then(res => setData(res.data))
   }
   const BMI = (x, y) => {
-    const bmi = x*10000/(y*y)
-    return bmi.toFixed(2)
+    return (x*10000/(y*y)).toFixed(2)
   }
   useEffect(() => {
     getProfile()
@@ -39,7 +38,7 @@ export const Profile = () => {
               <div className="flex flex-col gap-4 text-xl">
                 <h1 className=''>Phone: {data.phone}</h1>
                 <h1 className=''>Height: {data.height}cm</h1>
-                <h1 className=''>BMI: {BMI(data.weight, data.height).toFixed(2)}</h1>
+                <h1 className=''>BMI: {BMI(data.weight, data.height)}</h1>
               </div>
               <div className="flex flex-col gap-4 text-xl">
                 <h1 className=''>Age: {data.age}</h1>

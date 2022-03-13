@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Video = ({ data }) => {
   return (
     <div className='bg-emerald-600 px-6 py-4 shadow-2xl'>
@@ -11,7 +9,7 @@ export const Video = ({ data }) => {
         />
         <div className="">
           <h1 className='text-2xl font-semibold'>{data.title}</h1>
-          <h1>{data.desc}</h1>
+          <h1 className='text-sm'>{data.description}</h1>
         </div>
       </div>
     </div>

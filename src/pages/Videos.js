@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { GlobalContext } from "../context/GlobalContext";
+
 export default function Videos() {
+  const { token } = useContext(GlobalContext)
   const params = useParams()
   const [cricket, setCricket] = useState([])
   const [football, setFootball] = useState([])
@@ -12,6 +15,7 @@ export default function Videos() {
 
   const displayVideo = (ele) => {
     setVideoId(ele.link.split("/")[3]);
+    addTimeStamp()
   };
 
   const getCricket = () => {
@@ -30,7 +34,40 @@ export default function Videos() {
     axios.get('https://dishant.pythonanywhere.com/links/listfitness').then(res => setFitness(res.data))
   }
 
-  console.log(videoData);
+  const completeVideo = () => {
+    const data = new FormData()
+    data.append('title', videoData.title)
+    data.append('time', new Date())
+    data.append('completed', true)
+    data.append('link', 'https://youtu.be/'+videoId)
+    console.log(data);
+    const config = {
+      method: 'post',
+      url: 'https://dishant.pythonanywhere.com/links/createtimestamp/',
+      headers: {
+        Authentication : "Token " + token
+      },
+      data: data
+    }
+    axios(config).then(res => console.log(res.data)).catch(err => console.log(err))
+  }
+  const addTimeStamp = () => {
+    const data = new FormData()
+    data.append('title', data.title)
+    data.append('time', new Date())
+    data.append('completed', false)
+    data.append('link', data.link)
+    console.log(data);
+    const config = {
+      method: 'post',
+      url: 'https://dishant.pythonanywhere.com/links/createtimestamp/',
+      headers: {
+        Authentication : "Token " + token
+      },
+      data: data
+    }
+    axios(config).then(res => console.log(res.data)).catch(err => console.log(err))
+  }
 
   useEffect(() => {
     getCricket()
@@ -49,7 +86,7 @@ export default function Videos() {
 
   return (
     <div className='scroll-smooth'>
-      <div className="pb-10 pt-5 bg-gray-900 flex flex-1 items-center justify-center mt-3">
+      <div className="pb-10 pt-5 bg-gray-900 flex flex-1 items-center justify-center mb-4">
         {videoData ? (
           <div>
             <iframe
@@ -58,7 +95,10 @@ export default function Videos() {
               src={`https://www.youtube.com/embed/${videoId}`}
               allowFullScreen
             />
-            <h1 className='text-3xl font-semibold mt-4'>{videoData.title}</h1>
+            <div className='flex justify-between items-center'>
+              <h1 className='text-3xl font-semibold mt-4'>{videoData.title}</h1>
+              <button onClick={() => completeVideo()} className='px-6 py-2 bg-green-400 shadow-xl hover:shadow-2xl rounded-xl'>Complete</button>
+            </div>
           </div>
         ) : null}
       </div>

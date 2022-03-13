@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { useContext } from 'react'
+import { GlobalContext } from '../context/GlobalContext'
 import { EventMini } from '../components/EventMini'
 import { Video } from '../components/Video'
 import sports from "../assets/sports.png";
+
 export const Home = () => {
+  const { token } = useContext(GlobalContext)
   const [data, setData] = useState([])
   useEffect(() => {
     axios.get('https://dishant.pythonanywhere.com/links/listallvideos').then(res => {
@@ -12,6 +16,23 @@ export const Home = () => {
       console.log(res.data);
     })
   }, [])
+  const addTimeStamp = () => {
+    const data = new FormData()
+    data.append('title', data.title)
+    data.append('time', new Date())
+    data.append('completed', false)
+    data.append('link', data.link)
+    console.log(data);
+    const config = {
+      method: 'post',
+      url: 'https://dishant.pythonanywhere.com/links/createtimestamp/',
+      headers: {
+        Authentication : "Token " + token
+      },
+      data: data
+    }
+    axios(config).then(res => console.log(res.data)).catch(err => console.log(err))
+  }
   return (
   <div>
     <div className='h-[100vh] relation'>
@@ -40,7 +61,7 @@ export const Home = () => {
           </div>
           <div className='flex flex-col gap-4'>
             {data.map(sport => (
-              <Link to={`/videos/${sport.link.split("/")[3]}`}>
+              <Link onClick={() => addTimeStamp()} to={`/videos/${sport.link.split("/")[3]}`}>
                 <Video data={sport} />
               </Link>
             ))}
