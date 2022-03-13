@@ -9,14 +9,14 @@ mapboxGl.accessToken =
   "pk.eyJ1IjoibWFuYW4xNyIsImEiOiJjbDBvY2MxcmQxOHU2M2RwZTZvMG56MzAxIn0.91iA6W-k1KeelkXXk5p-zQ";
 export const SimpleMap = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div>
       <Map
         initialViewState={{
           latitude: 19.07,
           longitude: 72.87,
           zoom: 12,
         }}
-        style={{ width: 1200, height: 700 }}
+        style={{ width: 400, height: 300 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
