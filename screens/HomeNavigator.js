@@ -2,16 +2,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './Home';
-import { NavigationContainer } from '@react-navigation/native';
 import Cricket from './Cricket';
 import CategoryScreen from './CategoryScreen';
-import ChatBot from './Chatbot';
 import Graph from './Graph';
 import QRCode from './QRCode';
 import ScanQRCode from './ScanQRCode';
 import Football from './Football';
 import Fitness from './Fitness';
 import Yoga from './Yoga';
+import Video from './Video';
 const Stack = createNativeStackNavigator();
 
 const HomeNavigator = () => {
@@ -63,13 +62,6 @@ const HomeNavigator = () => {
         options={{
           headerShown: false,
         }}
-        component={ChatBot}
-        name="Chatbot"
-      />
-      <Stack.Screen
-        options={{
-          headerShown: false,
-        }}
         component={Graph}
         name="Graph"
       />
@@ -87,7 +79,15 @@ const HomeNavigator = () => {
         component={ScanQRCode}
         name="ScanQRCode"
       />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+        }}
+        component={Video}
+        name="Video"
+      />
     </Stack.Navigator>
+
   );
 };
 

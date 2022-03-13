@@ -7,9 +7,10 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import {styles} from '../components/styles';
+import { styles } from '../components/styles';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   const topics = [
     {
       title: 'Cricket',
@@ -41,7 +42,13 @@ const Home = ({navigation}) => {
     <View style={styles.container}>
 
       <View style={styles.headingWrapper}>
-        <Text style={styles.heading}>Hey Dishant</Text>
+        <View style={{ flexDirection: 'row' }}>
+          <Text style={styles.heading}>Hey Dishant</Text>
+          <Icon name="add-circle-outline" color='white' size={40} style={{
+            color: 'white', marginLeft: 150,
+
+          }} onPress={() => navigation.navigate('Video')} />
+        </View>
         <Text style={styles.subHeading}>Hope,you are doing well:)</Text>
         <Text style={styles.title}>Choose a sport you want to explore:</Text>
       </View>
@@ -70,7 +77,7 @@ const Home = ({navigation}) => {
                       },
                     ]}>
                     <Image style={styles.topicImage} source={item.url} />
-                    <Text style={[styles.label, {color: item.labelColor}]}>
+                    <Text style={[styles.label, { color: item.labelColor }]}>
                       {item.title}
                     </Text>
                   </View>

@@ -102,7 +102,7 @@ export default function Events({ navigation }) {
               <Icon name="qr-code-outline" onPress={() => {
 
                 navigation.navigate('QRCode');
-              }} size={24} color="#73788B" style={{ marginLeft: 100 }} />
+              }} size={30} color="#73788B" style={{ marginLeft: 100 }} />
 
             </View>
           </View>
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
   inputCard: {
     margin: 15,
     flexDirection: 'row',
-    backgroundColor: '#1f2128',
+    backgroundColor: "#000000",
     alignItems: 'center',
     borderRadius: 5,
     zIndex: 100,

@@ -65,6 +65,7 @@ const Dashboard = ({ navigation }) => {
             }} />
 
 
+
           </ View>
         </TouchableOpacity>
         {pastActivities.map(ac => (
