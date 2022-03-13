@@ -8,12 +8,12 @@ export const colors = {
   secondaryBg: '#E5E5E5',
   darkBg: '#333242',
   lightBg: '#ECD3C2',
-  heading: '#3F414E',
+  heading: '#000000',
   facebookBg: '#7583CA',
-  red :'#FF4848',
-  blue : '#3BCBFF',
-  white : '#FFFFFF',
-  black : '#000000'   ,
-  green:'#66fc03',
-  pink:'#fa6ba2'
+  red: '#FF4848',
+  blue: '#3BCBFF',
+  white: '#FFFFFF',
+  black: '#000000',
+  green: '#66fc03',
+  pink: '#fa6ba2'
 };

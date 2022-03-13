@@ -44,8 +44,8 @@ const Home = ({ navigation }) => {
       <View style={styles.headingWrapper}>
         <View style={{ flexDirection: 'row' }}>
           <Text style={styles.heading}>Hey Dishant</Text>
-          <Icon name="add-circle-outline" color='white' size={40} style={{
-            color: 'white', marginLeft: 150,
+          <Icon name="add-circle-outline" size={40} style={{
+            color: '#00CBA9', marginLeft: 150,
 
           }} onPress={() => navigation.navigate('Video')} />
         </View>
@@ -71,7 +71,7 @@ const Home = ({ navigation }) => {
                     style={[
                       styles.card,
                       {
-                        backgroundColor: item.background,
+
                         marginRight: 15,
                         marginBottom: 15,
                       },

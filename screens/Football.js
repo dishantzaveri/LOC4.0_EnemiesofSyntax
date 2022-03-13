@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -11,7 +11,7 @@ import Video from '../components/Video';
 import Category from '../components/Category';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Football = ({navigation}) => {
+const Football = ({ navigation }) => {
   const [topCricketData, setTopCricketData] = useState([]);
   const getData = () => {
     var axios = require('axios');
@@ -55,7 +55,7 @@ const Football = ({navigation}) => {
     },
   ];
   return (
-    <View style={{backgroundColor: 'black', flex: 1}}>
+    <View style={{ backgroundColor: '#1E6F5C', flex: 1 }}>
       <View
         style={{
           flexDirection: 'row',
@@ -109,9 +109,8 @@ const Football = ({navigation}) => {
                   }}>
                   <Image
                     source={{
-                      uri: `https://i.ytimg.com/vi/${
-                        ele.link.split('/')[3]
-                      }/hqdefault.jpg`,
+                      uri: `https://i.ytimg.com/vi/${ele.link.split('/')[3]
+                        }/hqdefault.jpg`,
                     }}
                     style={{
                       alignSelf: 'center',
@@ -123,7 +122,7 @@ const Football = ({navigation}) => {
                 </View>
                 <View
                   style={{
-                    backgroundColor: 'white',
+                    backgroundColor: '#00CBA9',
                     marginTop: -25,
                   }}>
                   <Text

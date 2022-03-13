@@ -40,7 +40,7 @@ const Dashboard = ({ navigation }) => {
   return (
     <View
       style={{
-        backgroundColor: 'black',
+        backgroundColor: '#1E6F5C',
         flex: 1,
         padding: 10,
       }}>
@@ -52,15 +52,15 @@ const Dashboard = ({ navigation }) => {
 
             <Text
               style={{
-                color: 'white',
+                color: '#00CBA9',
                 fontSize: 20,
                 fontWeight: 'bold',
                 margin: 20
               }}>
               Past Activities
             </Text>
-            <Icon name="pie-chart-outline" color='white' size={26} style={{
-              color: 'white', marginLeft: 130, marginTop: 20
+            <Icon name="pie-chart-outline" size={26} style={{
+              color: '#00CBA9', marginLeft: 130, marginTop: 20
 
             }} />
 

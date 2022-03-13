@@ -44,6 +44,7 @@ export default function Login({ navigation }) {
 
 
     <Background>
+
       <TextInput
         label="Email"
         returnKeyType="next"
@@ -105,13 +106,13 @@ const styles = StyleSheet.create({
   },
   best: {
 
-    color: '#3BCBFF',
+    color: '#FFFFFF',
     fontWeight: 'bold',
   },
 
   link: {
     fontWeight: 'bold',
-    color: "#3BCBFF",
+    color: "#FFFFFF",
   },
   buttonContainer: {
     width: '60%',

@@ -7,7 +7,7 @@ import Button from '../components/Button';
 
 const Profile = ({ navigation }) => {
     return (
-        <View style={{ backgroundColor: '#1B1A17', flex: 1 }}>
+        <View style={{ backgroundColor: '#1E6F5C', flex: 1 }}>
             <View
                 style={{
                     width: '100%',

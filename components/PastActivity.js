@@ -8,7 +8,7 @@ const PastActivity = ({ data }) => {
   return (
     <View
       style={{
-        backgroundColor: '#C1F4C5',
+        backgroundColor: '#00CBA9',
         borderRadius: 25,
         flexDirection: 'row',
         padding: 10,

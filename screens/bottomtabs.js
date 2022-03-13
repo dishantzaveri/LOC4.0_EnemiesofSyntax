@@ -17,8 +17,14 @@ const BottomTabs = ({ route }) => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      activeColor="#fff"
-      independent={true}>
+
+      independent={true}
+      screenOptions={{
+        tabBarActiveBackgroundColor: "#00CBA9",
+        tabBarInactiveBackgroundColor: "#00CBA9",
+
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={HomeNavigator}

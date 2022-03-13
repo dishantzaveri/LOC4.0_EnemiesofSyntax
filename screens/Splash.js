@@ -21,7 +21,7 @@ export default function Splash({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#019267',
 
   },
   animation: {

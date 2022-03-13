@@ -96,13 +96,13 @@ const styles = StyleSheet.create({
   },
   best: {
 
-    color: '#3BCBFF',
+    color: '#FFFFFF',
     fontWeight: 'bold',
   },
 
   link: {
     fontWeight: 'bold',
-    color: '#3BCBFF',
+    color: '#FFFFFF',
   },
   title: {
     fontSize: 30,

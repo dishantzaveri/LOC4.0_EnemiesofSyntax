@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     padding: 15,
-    backgroundColor: 'black',
+    backgroundColor: '#1E6F5C',
   },
   headingWrapper: {
     marginTop: 20,
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'HelveticaNeue',
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '300',
     marginTop: 10,
     color: colors.gray,
@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
     shadowRadius: 15,
     shadowOpacity: 10,
     elevation: 5,
-    backgroundColor: 'white',
+    backgroundColor: '#00CBA9',
     marginHorizontal: 1,
   },
   incomingMsgBox: {

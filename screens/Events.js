@@ -6,7 +6,8 @@ import {
   TouchableOpacity,
   FlatList,
   Text,
-  ImageBackground
+  ImageBackground,
+  Image
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -93,7 +94,7 @@ export default function Events({ navigation }) {
   const renderItem = ({ item }) => {
     return (
       <View style={styles.feedItem} elevation={15}>
-        <ImageBackground source={require('../assets/person.png')} style={styles.avatar} />
+        <Image source={require('../assets/person.png')} style={styles.avatar} />
         <View style={{ flex: 1 }}>
           <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
             <View style={{ flexDirection: "row" }}>
@@ -110,7 +111,7 @@ export default function Events({ navigation }) {
           <Text style={styles.post}>LOCATION - {item.location}</Text>
           <ImageBackground source={{
             uri: item.photo,
-          }} style={styles.postImage} resizeMode="cover" />
+          }} style={styles.postImage} resizeMode="stretch" />
 
 
         </View>
@@ -131,14 +132,7 @@ export default function Events({ navigation }) {
             value={search}
             onChangeText={(text) => searchFilter(text)}
           />
-          <TouchableOpacity
-          >
-            <FontAwesome5
-              name={"search" ? 'search' : 'refresh'}
-              size={20}
-              color={'white'}
-            />
-          </TouchableOpacity>
+
         </View>
       </View>
 
@@ -159,7 +153,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#019267',
 
   },
   header: {
@@ -180,20 +174,20 @@ const styles = StyleSheet.create({
     marginHorizontal: 10
   },
   feedItem: {
-    backgroundColor: "#FFF",
+    backgroundColor: "#00CBA9",
     borderRadius: 5,
     padding: 8,
     flexDirection: "row",
-    margin: 15,
+    margin: 25,
     shadowColor: "#000000",
     shadowOffset: { height: 15 },
     shadowRadius: 15,
     shadowOpacity: 10,
   },
   avatar: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
+    width: 46,
+    height: 46,
+    borderRadius: 20,
     marginRight: 16
   },
   name: {
@@ -209,7 +203,7 @@ const styles = StyleSheet.create({
   post: {
     marginTop: 16,
     fontSize: 14,
-    color: "#838899"
+    color: "white"
   },
   postImage: {
     width: undefined,
@@ -220,11 +214,11 @@ const styles = StyleSheet.create({
   input: {
     padding: 10,
     flex: 1,
-    borderBottomColor: "white",
-    color: "white",
+    borderBottomColor: "black",
+    backgroundColor: '#00CBA9',
   },
   inputCard: {
-    margin: 15,
+    margin: 25,
     flexDirection: 'row',
     backgroundColor: "#000000",
     alignItems: 'center',

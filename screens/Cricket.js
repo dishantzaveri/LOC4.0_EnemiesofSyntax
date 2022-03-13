@@ -55,7 +55,7 @@ const Cricket = ({ navigation }) => {
     },
   ];
   return (
-    <View style={{ backgroundColor: 'black', flex: 1 }}>
+    <View style={{ backgroundColor: '#1E6F5C', flex: 1 }}>
       <View
         style={{
           flexDirection: 'row',
@@ -122,7 +122,7 @@ const Cricket = ({ navigation }) => {
                 </View>
                 <View
                   style={{
-                    backgroundColor: 'white',
+                    backgroundColor: '#00CBA9',
                     marginTop: -25,
                   }}>
                   <Text
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     elevation: 4,
     marginHorizontal: 10,
     marginVertical: 20,
-    backgroundColor: 'white',
+    backgroundColor: '#00CBA9',
     paddingBottom: 20,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,

@@ -32,9 +32,9 @@ export default function News() {
 
         return (
 
-            <View >
-                <Card style={{ alignContent: 'center', alignItems: 'center', justifyContent: 'center' }}>
-                    <Card.Title title={item.source.name} subtitle={item.author} />
+            <View style={{ backgroundColor: "#00CBA9" }} >
+                <Card style={{ alignContent: 'center', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1E6F5C', }}>
+                    <Card.Title style={{ alignContent: 'center', alignItems: 'center', justifyContent: 'center', backgroundColor: '#00CBA9', }} title={item.source.name} subtitle={item.author} />
 
                     <Card.Content>
                         <Title>{item.title}</Title>
@@ -70,13 +70,13 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: 'black',
+        backgroundColor: '#1E6F5C',
 
     },
     header: {
         paddingTop: 64,
         paddingBottom: 16,
-        backgroundColor: 'black',
+        backgroundColor: '#1E6F5C',
         alignItems: "center",
         justifyContent: "center",
         borderBottomWidth: 1,
@@ -85,10 +85,13 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         fontSize: 20,
-        fontWeight: "500"
+        fontWeight: "500",
+        backgroundColor: '#1E6F5C',
+
     },
     feed: {
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        backgroundColor: '#1E6F5C',
     },
     feedItem: {
         backgroundColor: "#FFF",
@@ -100,6 +103,8 @@ const styles = StyleSheet.create({
         shadowOffset: { height: 15 },
         shadowRadius: 15,
         shadowOpacity: 10,
+        backgroundColor: '#1E6F5C',
+
     },
     avatar: {
         width: 36,
