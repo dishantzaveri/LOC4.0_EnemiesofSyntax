@@ -16,7 +16,7 @@ export const Events = () => {
           <button className='px-8 py-3 bg-green-400 shadow-xl hover:shadow-2xl rounded-xl text-gray-800'>Host Event</button>
         </Link> 
       </div>
-      <div className='flex flex-row gap-24'> 
+      <div className='flex flex-row flex-wrap gap-16'> 
         {
         data.map((data) => (
           <EventCard data={data} />

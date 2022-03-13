@@ -32,7 +32,7 @@ export const Login = () => {
   }
   return (
     <div className="h-[82vh] flex justify-center items-center">
-      <div className='w-[40vw] flex flex-col justify-center items-center gap-6'>
+      <div className='bg-teal-900 bg-opacity-60 shadow-2xl w-[35vw] flex flex-col justify-center items-center gap-6 pt-8 pb-8'>
         <h1 className='text-4xl font-semibold'>Login</h1>
         <input className='px-6 py-2 border border-gray-600 text-lg rounded-xl w-[60%] text-gray-800' placeholder='Enter Username' type="text" value={email} onChange={e => setEmail(e.target.value)} />
         <div className='w-[60%]'>

@@ -28,7 +28,7 @@ export const Register = () => {
   }
   return (
     <div className="h-[82vh] flex justify-center items-center">
-      <div className='w-[40vw] flex flex-col justify-center items-center gap-6'>
+      <div className='bg-teal-900 bg-opacity-60 shadow-2xl pt-8 pb-8 w-[40vw] flex flex-col justify-center items-center gap-6'>
         <h1 className='text-4xl font-semibold'>Register</h1>
         <input className='px-6 py-2 border border-gray-600 text-lg rounded-xl w-[60%]  text-gray-900' placeholder='Enter Username' type="text" value={username} onChange={e => setUsername(e.target.value)} />
         <input className='px-6 py-2 border border-gray-600 text-lg rounded-xl w-[60%]  text-gray-900' placeholder='Enter Email' type="text" value={email} onChange={e => setEmail(e.target.value)} />

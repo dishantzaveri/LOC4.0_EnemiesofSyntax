@@ -61,8 +61,8 @@ export const Rewards = () => {
       <div className='flex overflow-auto scroll-smooth no-scrollbar flex-1 flex-nowrap'>
         {
           data.map(ele => (
-                <div key={ele.id} className=' mr-10 mt-3 bg-gray-700 rounded-md max-h-[500px] min-w-[150px]'>
-                    <img className='max-h-[150px] min-w-full rounded-t-md' src={ele.image} />
+                <div key={ele.id} className=' mr-10 mt-3 bg-emerald-900 shadow-2xl max-h-[500px] min-w-[150px]'>
+                    <img className='max-h-[150px] min-w-full ' src={ele.image} />
                     <div className='p-2'>
                       <h3 className=' mt-1 text-2xl'>{ele.title}</h3>
                       <h3 className=' mt-1 text-xl' >{ele.points}</h3>

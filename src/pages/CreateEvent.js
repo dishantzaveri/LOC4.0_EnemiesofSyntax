@@ -48,8 +48,8 @@ export const CreateEvent = () => {
   };
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="text-3xl mb-10 mt-5">Create Event</h1>
-      <div className="bg-gray-800 w-[500px] pt-10 pb-10 rounded-md flex flex-col justify-center items-center gap-6 text-gray-800">
+      <div className="bg-emerald-900 mt-5 w-[500px] pt-10 pb-10 shadow-2xl flex flex-col justify-center items-center gap-6 text-gray-800">
+        <h1 className="text-3xl text-white ">Create Event</h1>
         <div>
           <input
             type="text"

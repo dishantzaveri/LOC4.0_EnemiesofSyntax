@@ -20,19 +20,20 @@ export const Profile = () => {
     axios(config).then(res => setData(res.data))
   }
   const BMI = (x, y) => {
-    return x*10000/(y*y)
+    const bmi = x*10000/(y*y)
+    return bmi.toFixed(2)
   }
   useEffect(() => {
     getProfile()
   }, [])
   console.log(userName);
   return (
-    <div className='bg-gray-700 shadow-xl rounded-xl flex flex-col items-center py-12 px-12 gap-8 w-[700px]'>
+    <div className='bg-emerald-900 shadow-2xl flex flex-col items-center py-12 px-12 gap-8 w-[700px]'>
       {
         data ? 
         (
           <div className='flex flex-col justify-center items-center gap-4 w-[70%]'>
-            <img className='w-48 h-48 rounded-full' src={data.photo ? data.photo : "https://img.icons8.com/ios-glyphs/90/000000/user-male-circle.png"} alt='profile'/>
+            <img className='w-28 h-28 rounded-full' src={data.photo ? data.photo : "https://img.icons8.com/ios-glyphs/90/000000/user-male-circle.png"} alt='profile'/>
             <h1 className="text-3xl font-semibold uppercase">{data.username}</h1>
             <div className="grid grid-cols-2 w-full">
               <div className="flex flex-col gap-4 text-xl">
