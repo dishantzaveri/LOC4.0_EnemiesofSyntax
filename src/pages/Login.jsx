@@ -26,6 +26,7 @@ export const Login = () => {
         setToken(res.data.token)
         setUsername(res.data.username)
         localStorage.setItem('token', res.data.token)
+        localStorage.setItem('username', res.data.username)
         navigate('/')
       })
   }

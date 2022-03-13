@@ -10,6 +10,7 @@ import { ProfileEdit } from './pages/ProfileEdit'
 import Videos from './pages/Videos'
 import { Event } from './pages/EventPage'
 import { CreateEvent } from './pages/CreateEvent'
+import { ProfileCreate } from './pages/ProfileCreate'
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
           <Route path='/events/:eventId' element={<Event />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/profile/edit' element={<ProfileEdit />} />
+          <Route path='/profile/create' element={<ProfileCreate />} />
           <Route path='/videos/:videoId' element={<Videos />} />
         </Routes>
         <Footer />
