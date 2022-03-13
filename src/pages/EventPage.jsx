@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
+import { SimpleMap } from '../components/SimpleMap'
 
 export const Event = () => {
   let params = useParams()
@@ -11,6 +12,13 @@ export const Event = () => {
   }, [])
   console.log(data);
   return (
-    <div>{data.id}</div>
+    <div className='grid grid-cols-12'>
+      <div className="col-span-7">
+        
+      </div>
+      <div className="col-span-5">
+        <SimpleMap />
+      </div>
+    </div>
   )
 }
