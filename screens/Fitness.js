@@ -11,20 +11,20 @@ import Video from '../components/Video';
 import Category from '../components/Category';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Cricket = ({navigation}) => {
+const Fitness = ({navigation}) => {
   const [topCricketData, setTopCricketData] = useState([]);
   const getData = () => {
     var axios = require('axios');
     var config = {
       method: 'get',
-      url: 'https://dishant.pythonanywhere.com/links/listallvideos',
+      url: 'http://dishant.pythonanywhere.com/links/listfitness',
       headers: {},
     };
 
     axios(config)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
-        setTopCricketData(response.data);
+        setTopCricketData(response.data.slice(0, 4));
       })
       .catch(function (error) {
         console.log(error);
@@ -40,18 +40,18 @@ const Cricket = ({navigation}) => {
   const categoryData = [
     {
       id: 1,
-      title: 'Batting',
-      image: require('../assets/batting.jpg'),
+      title: 'Sitting Pose',
+      image: require('../assets/sittingpose.jpg'),
     },
     {
       id: 2,
-      title: 'Bowling',
-      image: require('../assets/balling.jpg'),
+      title: 'Upperbody',
+      image: require('../assets/upperbody.jpg'),
     },
     {
       id: 3,
-      title: 'Fielding',
-      image: require('../assets/feilding.jpg'),
+      title: 'Running',
+      image: require('../assets/running.jpg'),
     },
   ];
   return (
@@ -74,7 +74,7 @@ const Cricket = ({navigation}) => {
             fontSize: 25,
             marginLeft: 20,
           }}>
-          Cricket
+          Fitness
         </Text>
       </View>
       {videoId ? (
@@ -163,7 +163,7 @@ const Cricket = ({navigation}) => {
                 image={cat.image}
                 title={cat.title}
                 key={cat.id}
-                sport="crickets"
+                sport="Fitness"
               />
             ))}
           </View>
@@ -202,4 +202,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Cricket;
+export default Fitness;

@@ -7,10 +7,9 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import { colors } from '../config/colors';
-import { styles } from '../components/styles';
+import {styles} from '../components/styles';
 
-const Home = ({ navigation }) => {
+const Home = ({navigation}) => {
   const topics = [
     {
       title: 'Cricket',
@@ -19,19 +18,19 @@ const Home = ({ navigation }) => {
       labelColor: '#000000',
     },
     {
-      title: 'FOOTBALL',
+      title: 'Football',
       url: require('../assets/football.jpeg'),
       background: '#FFFFFF',
       labelColor: '#000000',
     },
     {
-      title: 'YOGA',
+      title: 'Yoga',
       url: require('../assets/yoga.jpeg'),
       background: '#FFFFFF',
       labelColor: '#000000',
     },
     {
-      title: 'FITNESS',
+      title: 'Fitness',
       url: require('../assets/fitness.jpeg'),
       background: '#FFFFFF',
       labelColor: '#000000',
@@ -74,7 +73,7 @@ const Home = ({ navigation }) => {
                       },
                     ]}>
                     <Image style={styles.topicImage} source={item.url} />
-                    <Text style={[styles.label, { color: item.labelColor }]}>
+                    <Text style={[styles.label, {color: item.labelColor}]}>
                       {item.title}
                     </Text>
                   </View>

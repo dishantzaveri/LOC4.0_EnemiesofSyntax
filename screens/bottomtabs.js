@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from './Home';
@@ -13,7 +13,7 @@ import Drawer from './Drawer';
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabs = ({ route }) => {
+const BottomTabs = ({route}) => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -26,7 +26,7 @@ const BottomTabs = ({ route }) => {
           headerShown: false,
           tabBarLabel: 'Home',
           tabBarColor: '#009387',
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Icon name="ios-home" color={color} size={26} />
           ),
         }}
@@ -38,7 +38,7 @@ const BottomTabs = ({ route }) => {
           headerShown: false,
           tabBarLabel: 'Events',
           tabBarColor: '#1f65ff',
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Icon name="card-outline" color={color} size={26} />
           ),
         }}
@@ -49,7 +49,7 @@ const BottomTabs = ({ route }) => {
           headerShown: false,
           tabBarLabel: 'Dashboard',
           tabBarColor: '#1f65ff',
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Icon name="card-outline" color={color} size={26} />
           ),
         }}
@@ -62,7 +62,7 @@ const BottomTabs = ({ route }) => {
           headerShown: false,
           tabBarLabel: 'Events',
           tabBarColor: '#1f65ff',
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Icon name="card-outline" color={color} size={26} />
           ),
         }}
@@ -73,7 +73,7 @@ const BottomTabs = ({ route }) => {
           headerShown: false,
           tabBarLabel: 'Events',
           tabBarColor: '#1f65ff',
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Icon name="ios-person" color={color} size={26} />
           ),
         }}
