@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Event = ({ data }) => {
   return (
-    <div className='bg-gray-500 rounded-lg px-4 py-2'>
+    <div className='bg-emerald-600 shadow-2xl px-4 py-2'>
       <div className="flex items-center gap-4">
         <div className="">
           <img className='rounded-lg h-16 w-16' src={data.photo} alt="pic" />

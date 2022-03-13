@@ -16,7 +16,7 @@ import ML from './pages/ML'
 
 const App = () => {
   return (
-    <div className='bg-gray-900 text-gray-200 min-h-screen'>
+    <div className='bg-teal-900 text-gray-200 min-h-screen'>
       <Router>
         <NavBar />
         <Routes>
