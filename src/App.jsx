@@ -11,6 +11,7 @@ import Videos from './pages/Videos'
 import { Event } from './pages/EventPage'
 import { CreateEvent } from './pages/CreateEvent'
 import { ProfileCreate } from './pages/ProfileCreate'
+import ML from './pages/ML'
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
           <Route path='/profile/edit' element={<ProfileEdit />} />
           <Route path='/profile/create' element={<ProfileCreate />} />
           <Route path='/videos/:videoId' element={<Videos />} />
+          <Route path='/ml' element={<ML />} />
         </Routes>
         <Footer />
       </Router>
