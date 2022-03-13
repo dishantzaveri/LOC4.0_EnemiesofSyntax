@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 export const Event = () => {
   let params = useParams()
-  console.log(params);
+  console.log(params.eventId);
   const [data, setData] = useState({})
   useEffect(() => {
     axios.get('https://dishant.pythonanywhere.com/links/retrieveevents/' + params.eventId).then(res => setData(res.data.data))
