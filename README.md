@@ -20,6 +20,11 @@ Hola Everyone, This is team The Enemies of Syntax which consists of 4 people of 
 # Case Study: Sportify
 
 So about our product Sportify, everything mentioned below is all you need to know about this.
+In sportify you can learn various sports such as Cricket , Football , health activites such as Yoga , Fitness (Running). there is a feature where you can see various events that are goin to happen or you can also host an event with proper place and time we have also added a feature where you can keep track of your health record and earn points with regularly doing exercise.
+
+# What is so good about us?
+
+In sportify we have segrated various segregated various youtube videos in one where you can learn various sports in one destination with a complete track of record of what is happening around. We have also added sports news feature where you can get all the sports news.The feature of hosting a event and keeping a track of events that are going to happen with there location on google maps. There is a dashboard where one can keep a track of his activites
 
 # TechStacks used
 <br /> ->React Native
