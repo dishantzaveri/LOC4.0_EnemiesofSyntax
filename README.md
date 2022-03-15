@@ -42,18 +42,18 @@ Web Preview : Site Link - https://sport-ify.netlify.app/
  App Preview:
  
 <p float="left">
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/7.jpeg?raw=true" width = 200 height =500/>
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/12.jpeg?raw=true" width = 200 height =500 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/13.jpeg?raw=true" width = 200 height =500 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/14.jpeg?raw=true" width = 200 height =500 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/15.jpeg?raw=true" width = 200 height =500 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/16.jpeg?raw=true" width = 200 height =500/>
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/17.jpeg?raw=true" width = 200 height =500 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/18.jpeg?raw=true" width = 200 height =500 />
-  <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/19.jpeg?raw=true" width = 200 height =500 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/20.jpeg?raw=true" width = 200 height = 500 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/21.jpeg?raw=true" width = 200 height = 500 />
- <img src = "https://github.com/dishantzaveri/tsechackathon/blob/backend/assets/22.jpeg?raw=true" width = 200 height = 500 />
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/1.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/2.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/3.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/4.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/5.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/6.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/7.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/9.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/10.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/11.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/12.jpeg?raw=true" width = 200 height =500/>
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/12.jpeg?raw=true" width = 200 height =500/>
 
 
 <h3 align="left">Languages and Tools:</h3>
