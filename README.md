@@ -32,17 +32,16 @@ So about our product Sportify, everything mentioned below is all you need to kno
 Web Preview : Site Link - https://sport-ify.netlify.app/
 
 <p float="left">
-<img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/a.jpeg?raw=true" width = "40%" />
-<img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/b.jpeg?raw=true" width = "40%" />
- <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/c.jpeg?raw=true" width = "40%" />
- <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/d.jpeg?raw=true" width = "40%" />
- <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/e.jpeg?raw=true" width = "40%" />
- <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/f.jpeg?raw=true" width = "40%" />
- <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/g.jpeg?raw=true" width = "40%" />
- <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/h.jpeg?raw=true" width = "40%" />
- <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/i.jpeg?raw=true" width = "40%" />
- <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/j.jpeg?raw=true" width = "40%" />
- <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/k.jpeg?raw=true" width = "40%" />
+<img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/a.png?raw=true" width = "40%" />
+<img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/b.png?raw=true" width = "40%" />
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/c.png?raw=true" width = "40%" />
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/d.png?raw=true" width = "40%" />
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/e.png?raw=true" width = "40%" />
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/f.png?raw=true" width = "40%" />
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/g.png?raw=true" width = "40%" />
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/h.png?raw=true" width = "40%" />
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/i.png?raw=true" width = "40%" />
+ <img src = "https://github.com/dishantzaveri/LOC4.0_EnemiesofSyntax/blob/backend/assets/j.png?raw=true" width = "40%" />
  
  App Preview:
  
